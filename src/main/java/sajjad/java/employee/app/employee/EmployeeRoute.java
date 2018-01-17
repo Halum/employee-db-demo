@@ -49,7 +49,6 @@ public class EmployeeRoute {
 			return ResponseEntity.notFound().build();
 		}
 		
-		employee.setManagerId(updateData.getManagerId());
 		employee.setName(updateData.getName());
 		
 		Employee updatedEmployee = employeeRepository.save(employee);

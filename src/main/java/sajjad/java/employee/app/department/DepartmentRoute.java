@@ -12,11 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import sajjad.java.employee.app.employee.Employee;
-import sajjad.java.employee.app.employee.EmployeeRepository;
 
 @RestController
 public class DepartmentRoute {
@@ -24,7 +22,7 @@ public class DepartmentRoute {
 	@Autowired
 	DepartmentRepository departmentRepository;
 	
-	@PostMapping(value = "/departments")
+	@PostMapping("/departments")
 	public Department createDepartment(@Valid @RequestBody Department department) {
 		return departmentRepository.save(department);
 	}
